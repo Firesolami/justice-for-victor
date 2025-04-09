@@ -6,7 +6,7 @@ module.exports = async (req, res, next) => {
 
         return res.status(200).json({
             status: 'success',
-            count: users.length,
+            count: users.length
         });
     } catch (error) {
         next(error);

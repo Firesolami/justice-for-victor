@@ -20,7 +20,11 @@ mongoose
 // app.use(cors());
 // app.use(helmet());
 const corsOptions = {
-    origin: ['http://localhost:3000', 'http://localhost:5500', 'hhttps://victor-petition-fe.onrender.com'],
+    origin: [
+        'http://localhost:3000',
+        'http://localhost:5500',
+        'hhttps://victor-petition-fe.onrender.com'
+    ],
     methods: ['POST', 'GET', 'OPTIONS'],
     preflightContinue: true,
     allowedHeaders: ['Content-Type', 'Authorization'],
@@ -30,15 +34,20 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-app.use(helmet({
-    crossOriginResourcePolicy: { policy: "cross-origin" },
-    crossOriginOpenerPolicy: { policy: "same-origin-allow-popups" }
-}));
+app.use(
+    helmet({
+        crossOriginResourcePolicy: { policy: 'cross-origin' },
+        crossOriginOpenerPolicy: { policy: 'same-origin-allow-popups' }
+    })
+);
 
 app.use('/', (req, res, next) => {
     res.header('Cross-Origin-Resource-Policy', 'cross-origin');
     res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+    res.header(
+        'Access-Control-Allow-Headers',
+        'Origin, X-Requested-With, Content-Type, Accept, Authorization'
+    );
     next();
 });
 

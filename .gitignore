@@ -1,3 +1,7 @@
+populate_db.js
+*.xlsx
+sanitize.js
+
 # Logs
 logs
 *.log

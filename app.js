@@ -16,8 +16,23 @@ mongoose
     .then(() => console.log('Connected to MongoDB'))
     .catch((err) => console.error('Could not connect to MongoDB', err));
 
-app.use(cors());
-app.use(helmet());
+// app.use(cors());
+// app.use(helmet());
+const corsOptions = {
+    origin: ['http://localhost:3000', 'http://localhost:5500', 'https://shizzleclover.github.io'],
+    methods: ['POST'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true,
+    maxAge: 86400
+};
+
+app.use(cors(corsOptions));
+
+app.use(helmet({
+    crossOriginResourcePolicy: { policy: "cross-origin" },
+    crossOriginOpenerPolicy: { policy: "same-origin-allow-popups" }
+}));
+
 app.use(express.json());
 app.use(morgan('dev'));
 app.use(compression());

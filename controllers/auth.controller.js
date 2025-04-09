@@ -21,7 +21,7 @@ exports.signup = async (req, res, next) => {
         if (!validMatricNo) {
             return res.status(400).json({
                 status: 'error',
-                message: 'Invalid matric number.'
+                message: 'Even non-BUCC love Victor. No vex sha. Only BUCC allowed.'
             });
         }
 

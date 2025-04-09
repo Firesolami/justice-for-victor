@@ -20,7 +20,8 @@ mongoose
 // app.use(helmet());
 const corsOptions = {
     origin: ['http://localhost:3000', 'http://localhost:5500', 'https://shizzleclover.github.io'],
-    methods: ['POST'],
+    methods: ['POST', 'OPTIONS'],
+    preflightContinue: true,
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true,
     maxAge: 86400

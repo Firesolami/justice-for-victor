@@ -19,7 +19,7 @@ mongoose
 // app.use(cors());
 // app.use(helmet());
 const corsOptions = {
-    origin: ['http://localhost:3000', 'http://localhost:5500', 'https://shizzleclover.github.io'],
+    origin: ['http://localhost:3000', 'http://localhost:5500', 'hhttps://victor-petition-fe.onrender.com'],
     methods: ['POST', 'OPTIONS'],
     preflightContinue: true,
     allowedHeaders: ['Content-Type', 'Authorization'],

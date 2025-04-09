@@ -13,7 +13,7 @@ module.exports = async (req, res, next) => {
         if (user.hasSigned) {
             return res.status(400).json({
                 status: 'error',
-                message: 'User has already signed.'
+                message: `I know you love Victor ehn but you've signed before.`
             });
         }
         user.hasSigned = true;

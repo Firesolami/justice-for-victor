@@ -57,7 +57,7 @@ app.use(compression());
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/sign', signRoutes);
-app.use('/api/count', countRoutes);
+app.use('/api/petitions/count', countRoutes);
 
 // 404 handler
 app.all('*', (req, res) => {

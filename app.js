@@ -8,6 +8,7 @@ const helmet = require('helmet');
 const compression = require('compression');
 const authRoutes = require('./routes/auth.routes');
 const signRoutes = require('./routes/sign.routes');
+const countRoutes = require('./routes/count.routes');
 
 const app = express();
 
@@ -20,7 +21,7 @@ mongoose
 // app.use(helmet());
 const corsOptions = {
     origin: ['http://localhost:3000', 'http://localhost:5500', 'hhttps://victor-petition-fe.onrender.com'],
-    methods: ['POST', 'OPTIONS'],
+    methods: ['POST', 'GET', 'OPTIONS'],
     preflightContinue: true,
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true,
@@ -56,6 +57,7 @@ app.use(compression());
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/sign', signRoutes);
+app.use('/api/count', countRoutes);
 
 // 404 handler
 app.all('*', (req, res) => {

@@ -68,6 +68,14 @@ app.use('/api/auth', authRoutes);
 app.use('/api/sign', signRoutes);
 app.use('/api/petitions/count', countRoutes);
 
+// Keep alive
+app.use('/ping', (req, res) => {
+    res.status(200).json({
+        status: 'success',
+        message: 'pong'
+    });
+});
+
 // 404 handler
 app.all('*', (req, res) => {
     res.status(404).json({
